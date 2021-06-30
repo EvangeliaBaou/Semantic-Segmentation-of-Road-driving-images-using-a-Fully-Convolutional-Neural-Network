@@ -1,4 +1,4 @@
-# Semantic-Segmentation-of-Road-driving-images-using-a-Fully-Convolutional-Neural-Network
+# Semantic Segmentation of Road/Driving images using a Fully Convolutional Neural Network
 This notebook illustrates how to build a Fully Convolutional Neural Network for semantic image segmentation.
 The model will be trained on a dataset of images and labeled semantic segmentations captured via CARLA self-driving car simulator. The dataset is hosted in a Google bucket so you will need to download it first and unzip to a local directory.
 A pretrained VGG-16 network will be used for the feature extraction path, then followed by an FCN-8 network for upsampling and generating the predictions. 
@@ -30,6 +30,17 @@ The dataset you just downloaded contains folders for images and annotations. The
 | 11            | Wall  |
 | 12            | TrafficSign  |
 | 13            | Sky  |
+| 14            | Ground  |
+| 15            | Bridge  |
+| 16            | RailTrack  |
+| 17            | GuardRail  |
+| 18            | TrafficLight  |
+| 19            | Static  |
+| 20            | Dynamic  |
+| 21            | Water  |
+| 22            | Terrain  |
+For example, if a pixel is part of road, then that point will be labeled 7 in the label map.
+
 ## Data Preparation/exploration
 1. Resizing the height and width of the input images and label maps (224 x 224px by default)
 2. Normalizing the input images' pixel values to fall in the range [-1, 1]
