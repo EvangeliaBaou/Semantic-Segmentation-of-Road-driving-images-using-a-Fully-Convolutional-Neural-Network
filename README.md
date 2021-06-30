@@ -18,7 +18,18 @@ The dataset you just downloaded contains folders for images and annotations. The
 | ------------- | ------------- |
 | 0             | Unlabeled  |
 | 1             | Building  |
-
+| 2             | Fence  |
+| 3             | Other  |
+| 4             | Pedestrian  |
+| 5             | Pole  |
+| 6             | RoadLine  |
+| 7             | Road  |
+| 8             | SideWalk  |
+| 9             | Vegetation  |
+| 10            | Vehicles  |
+| 11            | Wall  |
+| 12            | TrafficSign  |
+| 13            | Sky  |
 ## Data Preparation/exploration
 1. Resizing the height and width of the input images and label maps (224 x 224px by default)
 2. Normalizing the input images' pixel values to fall in the range [-1, 1]
