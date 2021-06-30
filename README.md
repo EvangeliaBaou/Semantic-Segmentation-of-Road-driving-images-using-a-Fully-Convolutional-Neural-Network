@@ -54,4 +54,4 @@ orig_anno = [0 1 2 3] <br/>
 Then the reshaped annotation will have 4 slices and its contents will look like this: <br/>
 reshaped_anno = [1 0 0 0] [0 1 0 0] [0 0 1 0] [0 0 0 1]
 
-
+![alt text](https://github.com/LiaBaou/Semantic-Segmentation-of-Road-driving-images-using-a-Fully-Convolutional-Neural-Network/blob/main/fcn8.png)
