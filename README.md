@@ -20,6 +20,6 @@ The output will be a label map (i.e. segmentation mask) with predictions for 23 
 If we have a label map with 4 classes. <br/>
 n_classes = 4 <br/>
 And this is the original annotation. <br/>
-orig_anno = [0 1 2 3] < br/>
+orig_anno = [0 1 2 3]< br/>
 Then the reshaped annotation will have 4 slices and its contents will look like this: <br/>
 reshaped_anno = [1 0 0 0] [0 1 0 0] [0 0 1 0] [0 0 0 1]
