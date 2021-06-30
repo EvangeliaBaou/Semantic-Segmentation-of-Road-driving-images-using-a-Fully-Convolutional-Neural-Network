@@ -54,4 +54,7 @@ orig_anno = [0 1 2 3] <br/>
 Then the reshaped annotation will have 4 slices and its contents will look like this: <br/>
 reshaped_anno = [1 0 0 0] [0 1 0 0] [0 0 1 0] [0 0 0 1]
 
+# Model
+AS mentioned earlier, a VGG-16 network will be used for the encoder and FCN-8 for the decoder. This is the diagram of the model's architecture:
+
 ![alt text](https://github.com/LiaBaou/Semantic-Segmentation-of-Road-driving-images-using-a-Fully-Convolutional-Neural-Network/blob/main/fcn8.png)
