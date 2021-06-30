@@ -12,6 +12,12 @@ The output will be a label map (i.e. segmentation mask) with predictions for 23 
 * matplotlib for visualization
 * tensorflow_datasets (???)
 * seaborn
+## Dataset
+The dataset you just downloaded contains folders for images and annotations. The images contain the original images while the annotations contain the pixel-wise label maps. Each label map has the shape (height, width , 1) with each point in this space denoting the corresponding pixel's class. Classes are in the range [0, 21] (i.e. 22 classes) and the pixel labels correspond to these classes:
+| Value         | Class Name |
+| ------------- | ------------- |
+| 0             | Unlabeled  |
+| 1             | Building  |
 
 ## Data Preparation/exploration
 1. Resizing the height and width of the input images and label maps (224 x 224px by default)
