@@ -39,6 +39,7 @@ The dataset you just downloaded contains folders for images and annotations. The
 | 20            | Dynamic  |
 | 21            | Water  |
 | 22            | Terrain  |
+
 For example, if a pixel is part of road, then that point will be labeled 7 in the label map.
 
 ## Data Preparation/exploration
