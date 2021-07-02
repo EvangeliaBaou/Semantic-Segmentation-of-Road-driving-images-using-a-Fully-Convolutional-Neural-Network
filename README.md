@@ -58,3 +58,13 @@ reshaped_anno = [1 0 0 0] [0 1 0 0] [0 0 1 0] [0 0 0 1]
 AS mentioned earlier, a VGG-16 network will be used for the encoder and FCN-8 for the decoder. This is the diagram of the model's architecture:
 
 ![alt text](https://github.com/LiaBaou/Semantic-Segmentation-of-Road-driving-images-using-a-Fully-Convolutional-Neural-Network/blob/main/fcn8.png)
+
+## Define VGG-16
+
+The encoder is built as shown below.
+
+    1. Create 5 blocks with increasing number of filters at each stage.
+    2. The number of convolutions, filters, kernel size, activation, pool size and pool stride will remain constant.
+    3. Load the pretrained weights after creating the VGG 16 network.
+    4. Additional convolution layers will be appended to extract more features.
+    5. The output will contain the output of the last layer and the previous four convolution blocks.
