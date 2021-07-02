@@ -2,7 +2,7 @@
 This notebook illustrates how to build a Fully Convolutional Neural Network for semantic image segmentation.
 The model will be trained on a dataset of images and labeled semantic segmentations captured via CARLA self-driving car simulator. The dataset is hosted in a Google bucket so you will need to download it first and unzip to a local directory.
 A pretrained VGG-16 network will be used for the feature extraction path, then followed by an FCN-8 network for upsampling and generating the predictions. 
-The output will be a label map (i.e. segmentation mask) with predictions for 23 classes.
+The output will be a label map (i.e. segmentation mask) with predictions for 23 classes. All code was implemented in Google Colab.
 
 ## Requirements
 * os for interacting with the operating system
@@ -71,3 +71,8 @@ The encoder is built as shown below.
 ## Define FCN 8 Decoder
 ## Define final model
 ## Compile the model
+## Train the model
+## Evaluate the model
+The intersection-over-union and the dice score are used as metrics to evaluate the model. In particular:
+* intersection-over-union: is known to be a good metric for measuring overlap between two bounding boxes or masks. If the prediction is completely correct, IoU = 1. The lower the IoU, the worse the prediction result.
+![alt text](https://miro.medium.com/max/3000/1*kK0G-BmCqigHrc1rXs7tYQ.jpeg)
