@@ -84,6 +84,7 @@ The final model is defined by creating an instance of tf.Keras.model passing in 
 The inputs are defined as layers that takes into 224x224x3. Next the VGG16 is created followed by the decoder layer that gives the outputs.
 ## Compile the model
 ## Train the model
+
 ## Evaluate the model
 The intersection-over-union and the dice score are used as metrics to evaluate the model. In particular:
 * intersection-over-union: is known to be a good metric for measuring overlap between two bounding boxes or masks. If the prediction is completely correct, IoU = 1. The lower the IoU, the worse the prediction result.
