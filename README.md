@@ -68,10 +68,8 @@ The encoder is built as shown below.
 
    1. Create 5 blocks with increasing number of filters at each stage.
    2. The number of convolutions, filters, kernel size, activation, pool size and pool stride will remain constant.
-   3. Load the pretrained weights after creating the VGG 16 network.[The pretrained weights for VGG 16 can be found here: 
-      https://github.com/fchollet/deep-learning-models/releases/tag/v0.1]
-   5. Additional convolution layers will be appended to extract more features.
-   6. The output will contain the output of the last layer and the previous four convolution blocks.
+   3. Additional convolution layers will be appended to extract more features.
+   4. The output will contain the output of the last layer and the previous four convolution blocks.
 
 ## Define FCN 8 Decoder
 The FCN 8 Decoder has three steps:
