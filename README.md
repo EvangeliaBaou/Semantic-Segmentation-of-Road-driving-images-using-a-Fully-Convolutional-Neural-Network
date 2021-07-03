@@ -82,9 +82,13 @@ Finally, the softmax activation layer is added in order to give classification i
 ## Define final model
 The final model is defined by creating an instance of tf.Keras.model passing in the inputs and the outputs.
 The inputs are defined as layers that takes into 224x224x3. Next the VGG16 is created followed by the decoder layer that gives the outputs.
-## Compile the model
-## Train the model
 
+## Compile the model
+The loss, optimizer and metrics are defined as follow:
+1. categorical_crossentropy is used as the loss function since this is a multi-classification problem the label map is transformed to one hot encoded vectors for each pixel in the image.
+2. Accuracy is used as metric
+## Train the model  
+The model is trained 
 ## Evaluate the model
 The intersection-over-union and the dice score are used as metrics to evaluate the model. In particular:
 * intersection-over-union: is known to be a good metric for measuring overlap between two bounding boxes or masks. If the prediction is completely correct, IoU = 1. The lower the IoU, the worse the prediction result.
