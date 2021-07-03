@@ -59,13 +59,16 @@ AS mentioned earlier, a VGG-16 network will be used for the encoder and FCN-8 fo
 
 ![alt text](https://github.com/LiaBaou/Semantic-Segmentation-of-Road-driving-images-using-a-Fully-Convolutional-Neural-Network/blob/main/fcn8.png)
 
+## Define Pooling Block of VGG
+VGG networks have repeating blocks thus a function was created to summarize this process. Each block has convolutional layers followed by a max pooling layer which downsamples the image.
+
 ## Define VGG-16
 
 The encoder is built as shown below.
 
    1. Create 5 blocks with increasing number of filters at each stage.
    2. The number of convolutions, filters, kernel size, activation, pool size and pool stride will remain constant.
-   3. Load the pretrained weights after creating the VGG 16 network.
+   3. Load the pretrained weights after creating the VGG 16 network.[The pretrained weights for VGG 16 can be found here: https://github.com/fchollet/deep-learning-models/releases       /tag/v0.1]
    4. Additional convolution layers will be appended to extract more features.
    5. The output will contain the output of the last layer and the previous four convolution blocks.
 ## Define FCN 8 Decoder
