@@ -72,8 +72,16 @@ The encoder is built as shown below.
       https://github.com/fchollet/deep-learning-models/releases/tag/v0.1]
    5. Additional convolution layers will be appended to extract more features.
    6. The output will contain the output of the last layer and the previous four convolution blocks.
+
 ## Define FCN 8 Decoder
+The FCN 8 Decoder has three steps:
+1. The first step takes an 2x Upsampled prediction of pool5 and combines it with the prediction of pool 4.
+2. The second step gets the results that came out from pool 4 and pool 5, upsample them and combine them with pool 3.  
+3. The last step gets the value of the previous step and upscaling it by 8x.
+Finally, the softmax activation layer is added in order to give classification in every pixel.
 ## Define final model
+The final model is defined by creating an instance of tf.Keras.model passing in the inputs and the outputs.
+The inputs are defined as layers that takes into 224x224x3. Next the VGG16 is created followed by the decoder layer that gives the outputs.
 ## Compile the model
 ## Train the model
 ## Evaluate the model
