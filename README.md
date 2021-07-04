@@ -58,6 +58,7 @@ reshaped_anno = [1 0 0 0] [0 1 0 0] [0 0 1 0] [0 0 0 1]
 AS mentioned earlier, a VGG-16 network will be used for the encoder and FCN-8 for the decoder. This is the diagram of the model's architecture:
 
 ![alt text](https://github.com/LiaBaou/Semantic-Segmentation-of-Road-driving-images-using-a-Fully-Convolutional-Neural-Network/blob/main/fcn8.png)
+Source: https://arxiv.org/pdf/1411.4038.pdf
 
 ## Define Pooling Block of VGG
 VGG networks have repeating blocks thus a function was created to summarize this process. Each block has convolutional layers followed by a max pooling layer which downsamples the image.
@@ -89,5 +90,38 @@ The loss, optimizer and metrics are defined as follow:
 The model is trained 
 ## Evaluate the model
 The intersection-over-union and the dice score are used as metrics to evaluate the model. In particular:
+
+![Diagram-illustrating-the-meaning-of-segmentation-errors-namely-true-positive-TP](https://user-images.githubusercontent.com/63750229/124395752-85436800-dd0e-11eb-81a0-5e61e5d18766.png)
 * intersection-over-union: is known to be a good metric for measuring overlap between two bounding boxes or masks. If the prediction is completely correct, IoU = 1. The lower the IoU, the worse the prediction result.
-![alt text](https://miro.medium.com/max/3000/1*kK0G-BmCqigHrc1rXs7tYQ.jpeg)
+![iou_equation](https://user-images.githubusercontent.com/63750229/124395755-88d6ef00-dd0e-11eb-9642-270d5b60101f.png)
+![dice_equation](https://user-images.githubusercontent.com/63750229/124395756-8aa0b280-dd0e-11eb-9dde-7008f440a9b0.png)
+
+## Display predictions
+![Images prediction and ground thruth](https://user-images.githubusercontent.com/63750229/124395848-216d6f00-dd0f-11eb-884c-d0ef0ef1ebaa.png)
+
+## Display metrics
+ Class Name     | IoU           |       Dice Score     |
+| ------------- | ------------- |        ------------- |
+| Unlabeled     | 0.89          |0.94|
+| Building      | 0.52          |0.68|
+| Fence         | 0.00053       |0.001|
+| Other         | 0.0010        |0.002|
+| Pedestrian    | 0.0000000013  |0.000000002|
+| Pole          | 0.00000000042 |0.00000000085|
+| RoadLine      | 0.0014        |0.0028|
+| Road          | 0.82          |0.90|
+| SideWalk      | 0.58          |0.74|
+| Vegetation    | 0.41          |0.58|
+| Vehicles      | 0.91          |0.95|
+| Wall          | 0.005         |0.011|
+| TrafficSign   | 0.000000005   |0.00000001|
+| Sky           |  1            | 2|
+| Ground        |  1            |2|
+| Bridge        |  1            |2|
+| RailTrack     |  1            |2|
+| GuardRail     |  1            |2|
+| TrafficLight  |  1            |2|
+| Static        |  1            |2|
+| Dynamic       |  1            |2|
+| Water         |  1            |2|
+| Terrain       |  1            |2|
