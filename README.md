@@ -10,7 +10,7 @@ The output will be a label map (i.e. segmentation mask) with predictions for 23 
 * numpy for data manipulation
 * tensorflow for building the model 
 * matplotlib for visualization
-* tensorflow_datasets (???)
+* tensorflow_datasets 
 * seaborn
 ## Dataset
 The dataset you just downloaded contains folders for images and annotations. The images contain the original images while the annotations contain the pixel-wise label maps. Each label map has the shape (height, width , 1) with each point in this space denoting the corresponding pixel's class. Classes are in the range [0, 21] (i.e. 22 classes) and the pixel labels correspond to these classes:
@@ -74,8 +74,8 @@ The encoder is built as shown below.
 
 ## Define FCN 8 Decoder
 The FCN 8 Decoder has three steps:
-1. The first step takes an 2x Upsampled prediction of pool5 and combines it with the prediction of pool 4.
-2. The second step gets the results that came out from pool 4 and pool 5, upsample them and combine them with pool 3.  
+1. The first step takes an 2x Upsampled prediction of the last convolution layer and combines it with the prediction of pool 4.
+2. The second step gets the results that came out from pool 4 and the previous step, upsample them and combine them with pool 3.  
 3. The last step gets the value of the previous step and upscaling it by 8x.
 Finally, the softmax activation layer is added in order to give classification in every pixel.
 ## Define final model
